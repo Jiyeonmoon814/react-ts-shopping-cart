@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid'
 import { AddShoppingCart, ShoppingCart } from '@material-ui/icons';
 import { Badge } from '@material-ui/core';
 import { Item } from './Item/Item';
+import { Cart } from './Cart/Cart';
 
 //styles 
 import { Wrapper, StyledButton } from './App.styles';
@@ -49,7 +50,7 @@ export const App = () => {
   return (
     <Wrapper>
       <Drawer anchor='right' open={showCart} onClose={() => setShowCart(false)}>
-        Cart goes here 
+        <Cart cartItems={cartItems} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} />
       </Drawer>
       <StyledButton onClick={() => setShowCart(true)}>
         <Badge badgeContent={getTotalItems(cartItems)} color='error'>
