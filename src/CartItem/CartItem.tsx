@@ -25,6 +25,7 @@ export const CartItem:FC<Props> = ({ item, addToCart, removeFromCart }) => (
                 <div className="buttons">
                     <Button size="small" disableElevation 
                         variant="contained" onClick={() => removeFromCart(item.id)}>-</Button>
+                    <span>{item.amount}</span>
                     <Button size="small" disableElevation 
                         variant="contained" onClick={() => addToCart(item)}>+</Button>
                 </div>
